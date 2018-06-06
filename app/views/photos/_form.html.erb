@@ -1,0 +1,12 @@
+<%= form_for [@user, @photo] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :file %>
+  <%= f.text_field :file %><br/>
+  <%= f.submit "Save" %>
+  <%- if @photo.new_record? %>
+    <%= link_to "Back", user_path(@user) %>
+  <% else %>
+    <%= link_to "Back", user_photo_path(@user, @photo) %>
+  <% end %>
+<% end %>

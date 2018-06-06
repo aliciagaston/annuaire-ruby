@@ -1,0 +1,21 @@
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br/>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br/>
+  <%= f.label :email %>
+  <%= f.email_field :email %><br/>
+  <%- if @user.errors[:email].present? %>
+    <%= @user.errors[:email].to_sentence %><br/>
+  <% end %>
+  <%= f.label :date_of_birth %>
+  <%= f.date_select :date_of_birth %><br/>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %><br/>
+  <%= f.submit "Save" %>
+  <%- if @user.new_record? %>
+    <%= link_to "Back", :users %>
+  <% else %>
+    <%= link_to "Back", user_path(@user) %>
+  <% end %>
+<% end %>

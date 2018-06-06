@@ -1,6 +1,7 @@
 <h2>
   Liste des Users
 </h2>
+  <%= link_to "Add", new_user_path %><br/>
   <%- @users.each do |user| %>
 
     <%= link_to user_path(user) do %>
@@ -8,5 +9,6 @@
     <%- end %>
     <%= user.phone_number %>
     <%= user.email %>
+    <%= link_to "delete", user_path(user), method: :delete %>
     <br />
   <%- end %>

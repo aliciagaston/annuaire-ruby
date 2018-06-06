@@ -2,6 +2,12 @@
 Date de naissance : <%= @user.date_of_birth %><br/>
 Téléphone : <%= @user.phone_number %><br/>
 Email : <%= @user.email %><br/>
+<h4> Photos</h4>
+  <% @user.photos&.each do |photo| %>
+    <li><%= link_to photo.name, user_photo_path(@user.id, photo) %></li>
+  <% end %>
+<%= link_to "Add Photo", new_user_photo_path(@user.id) %>
 
 <%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Retour", :users %>
+<%= link_to "Delete", user_path(@user), method: :delete %>
+<%= link_to "Back", :users %>

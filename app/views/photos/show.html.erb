@@ -1,0 +1,6 @@
+File : <%= @photo.file %><br/>
+Name : <%= @photo.name %><br/>
+
+<%= link_to "Edit", edit_user_photo_path(@user, @photo) %>
+<%= link_to "Delete", user_photo_path(@user, @photo), method: :delete %>
+<%= link_to "Back", @photo.user %>

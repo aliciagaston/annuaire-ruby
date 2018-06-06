@@ -1,0 +1,14 @@
+<h2>
+  Liste des Photos
+</h2>
+  <%= link_to "Add", new_user_photo_path %><br/>
+  <%- @photos.each do |photo| %>
+
+    <%= link_to user_photo_path(@user, photo) do %>
+    <%= photo.name %>
+    <%- end %>
+    <%= photo.file %>
+    <%= link_to "delete", user_photo_path(@user, photo), method: :delete %>
+    <br />
+  <%- end %>
+<%= link_to "Back", user_path(@user)%>
