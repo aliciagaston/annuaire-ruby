@@ -1,0 +1,7 @@
+<h2>Bonjour <%= @user.first_name %> <%= @user.last_name %></h2>
+Date de naissance : <%= @user.date_of_birth %><br/>
+Téléphone : <%= @user.phone_number %><br/>
+Email : <%= @user.email %><br/>
+
+<%= link_to "Edit", edit_user_path(@user) %>
+<%= link_to "Retour", :users %>

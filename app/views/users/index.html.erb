@@ -2,6 +2,11 @@
   Liste des Users
 </h2>
   <%- @users.each do |user| %>
-    <%= user.first_name %>
+
+    <%= link_to user_path(user) do %>
+    <%= user.full_name %>
+    <%- end %>
+    <%= user.phone_number %>
+    <%= user.email %>
     <br />
   <%- end %>
